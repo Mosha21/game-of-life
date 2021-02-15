@@ -1,9 +1,11 @@
+const express = require('express')
+
 const Cell = require('./utils/cell')
 const fs = require('fs')
 const checkForPatterns = require('./utils/patterns')
 
 // READ INPUT FILE
-const fileBuffer = fs.readFileSync('./utils/input.json')
+const fileBuffer = fs.readFileSync('src/utils/input.json')
 var fileString = fileBuffer.toString()
 const input = JSON.parse(fileString)
 //***************
@@ -30,3 +32,15 @@ for (var i = 0; i < generations; i++) {
 
 console.table(grid)
 checkForPatterns(grid, gridSize, input)
+
+// SERVER
+const app = express()
+const port = 3000
+
+app.get('', (req, res) => {
+    res.send(input)
+})
+
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
+})

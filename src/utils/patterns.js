@@ -2,7 +2,7 @@ const fs = require('fs')
 require('./array')
 
 // READ INPUT FILE
-const fileBuffer = fs.readFileSync('utils/patterns.json')
+const fileBuffer = fs.readFileSync('src/utils/patterns.json')
 var fileString = fileBuffer.toString()
 const { patterns } = JSON.parse(fileString)
 //***************
@@ -15,7 +15,7 @@ const checkForPatterns = (grid = [], gridSize = 0, input) => {
     }
 
     var inputString = JSON.stringify(input)
-    fs.writeFileSync('utils/input.json', inputString)
+    fs.writeFileSync('src/utils/input.json', inputString)
 }
 
 //console.log([1, 2, 3].equals([1, 2, 3]))
