@@ -1,1 +1,41 @@
-{"gridSize":10,"generations":10,"comments":["startingCells is filled with x and y coordinates as follow: [x, y]","coordinates 0, 0 start from the upper-right corner"],"startingCells":[[0,0],[1,0],[0,1],[1,1],[1,5],[1,6],[1,7],[5,0],[6,1],[4,2],[5,2],[6,2]],"patterns":{"stillLifes":{"block":196,"beehive":0,"loaf":0,"boat":0,"tub":0},"oscilators":{"blinker":180,"toad":0,"beacon":0},"spaceships":{"glider":160,"lightWeightSpaceship":0},"others":0}}
+{
+    "gridSize": 10,
+    "generations": 10,
+    "comments": [
+        "startingCells is filled with x and y coordinates as follow: [x, y]",
+        "coordinates 0, 0 start from the upper-right corner"
+    ],
+    "startingCells": [
+        [0, 0],
+        [1, 0],
+        [0, 1],
+        [1, 1],
+        [1, 5],
+        [1, 6],
+        [1, 7],
+        [5, 0],
+        [6, 1],
+        [4, 2],
+        [5, 2],
+        [6, 2]
+    ],
+    "patterns": {
+        "stillLifes": {
+            "block": 0,
+            "beehive": 0,
+            "loaf": 0,
+            "boat": 0,
+            "tub": 0
+        },
+        "oscilators": {
+            "blinker": 0,
+            "toad": 0,
+            "beacon": 0
+        },
+        "spaceships": {
+            "glider": 0,
+            "lightWeightSpaceship": 0
+        },
+        "others": 0
+    }
+}
