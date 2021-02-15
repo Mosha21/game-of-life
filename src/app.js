@@ -24,7 +24,7 @@ const checkForPatterns = require('./utils/patterns')
 const changeCells = require('./utils/changeCells')
 
 // READ INPUT FILE
-const fileBuffer = fs.readFileSync('src/utils/input.json')
+const fileBuffer = fs.readFileSync('src/utils/initialInput.json')
 var fileString = fileBuffer.toString()
 const input = JSON.parse(fileString)
 //***************
@@ -32,6 +32,7 @@ const input = JSON.parse(fileString)
 // EXTRACT INITIAL VALUES
 const gridSize = input.gridSize
 const generations = input.generations
+const configuration = process.argv[2]
 //**********************
 
 // FILL GRID WITH INITIAL VALUES
@@ -40,9 +41,9 @@ var grid = new Array(gridSize).fill(0)
 for (var i = 0; i < gridSize; i++)
     grid[i] = new Array(gridSize).fill(0)
 
-    input.startingCells.forEach(coordinates => {
+input.startingCells[configuration].forEach(coordinates => {
     grid[coordinates[1]][coordinates[0]] = 1
-});
+})
 //*******************************
 
 for (var i = 0; i < generations; i++) {
