@@ -110,7 +110,7 @@ const verifyPattern = (pattern, grid = [], gridSize = 0, row = 0, column = 0) =>
     cellsBlock = []
     var cellsBlockHeight = pattern.length // NUMBER OF ROWS
     var cellsBlockWidth = pattern[0].length // NUMBER OF COLUMNS
-    console.log(cellsBlockHeight, cellsBlockWidth)
+    
     if (row + cellsBlockHeight <= gridSize && column + cellsBlockWidth <= gridSize) {
         for (var i = row; i < row + cellsBlockHeight; i++) { // FILL CELLS BLOCK WITH VALUES FROM THE GRID STARTING IN COORDINATE (X, Y)
             cellsBlock.push(grid[i].slice(column, column + cellsBlockWidth))

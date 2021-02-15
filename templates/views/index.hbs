@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Game of Life</title>
+</head>
+
+<body>
+    <div>
+        {{#each content}}
+            <p style="margin-left:2.5em">
+                {{#each this}}
+                    {{ this }}
+                    ----
+                {{/each}}
+            </p>
+        {{/each}}
+    </div>
+</body>
+
+</html>

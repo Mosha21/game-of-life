@@ -1,4 +1,23 @@
 const express = require('express')
+const hbs = require('hbs')
+const path = require('path')
+
+//Define paths for Express config
+const publicDirectoryPath = path.join(__dirname, '../public')
+const viewsPath = path.join(__dirname, '../templates/views')
+//const partialsPath = path.join(__dirname, '../templates/partials')
+
+// SERVER
+const app = express()
+const port = 3000
+
+//Setup handlebars engine and views location
+app.set('view engine', 'hbs')
+app.set('views', viewsPath)
+//hbs.registerPartials(partialsPath)
+
+//Setup static directory to serve
+app.use(express.static(publicDirectoryPath))
 
 const fs = require('fs')
 const checkForPatterns = require('./utils/patterns')
@@ -26,7 +45,6 @@ for (var i = 0; i < gridSize; i++)
 });
 //*******************************
 
-//console.table(grid)
 for (var i = 0; i < generations; i++) {
     // CHECK IN THE GRID FOR PATTERNS
     checkForPatterns(grid, gridSize, input)
@@ -36,16 +54,13 @@ for (var i = 0; i < generations; i++) {
     //console.table(grid)
 }
 
-console.table(grid)
+app.get('', (req, res) => {
+    res.render('index', {
+        title: 'Game of Life',
+        content: grid
+    })
+})
 
-// SERVER
-// const app = express()
-// const port = 3000
-
-// app.get('', (req, res) => {
-//     res.send(input)
-// })
-
-// // app.listen(port, () => {
-// //     console.log('Server is up on port ' + port)
-// // })
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
+})
