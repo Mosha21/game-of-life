@@ -1,6 +1,6 @@
 {
-    "gridSize": 10,
-    "generations": 10,
+    "gridSize": 5,
+    "generations": 2,
     "comments": [
         "startingCells is filled with x and y coordinates as follow: [x, y]",
         "coordinates 0, 0 start from the upper-right corner"
@@ -10,14 +10,10 @@
         [1, 0],
         [0, 1],
         [1, 1],
-        [1, 5],
-        [1, 6],
-        [1, 7],
-        [5, 0],
-        [6, 1],
-        [4, 2],
-        [5, 2],
-        [6, 2]
+        [3, 2],
+        [2, 3],
+        [4, 3],
+        [3, 4]
     ],
     "patterns": {
         "stillLifes": {

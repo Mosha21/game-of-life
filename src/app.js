@@ -22,26 +22,30 @@ for (var i = 0; i < gridSize; i++)
     grid[i] = new Array(gridSize).fill(0)
 
     input.startingCells.forEach(coordinates => {
-    grid[coordinates[1]][coordinates[0]] = '1'
+    grid[coordinates[1]][coordinates[0]] = 1
 });
 //*******************************
 
+//console.table(grid)
 for (var i = 0; i < generations; i++) {
     // CHECK IN THE GRID FOR PATTERNS
+    checkForPatterns(grid, gridSize, input)
+
+    // UPDATE CELLS
+    grid = changeCells(grid, gridSize)
+    //console.table(grid)
 }
-changeCells(grid, gridSize)
 
 console.table(grid)
-//checkForPatterns(grid, gridSize, input)
 
 // SERVER
-const app = express()
-const port = 3000
+// const app = express()
+// const port = 3000
 
-app.get('', (req, res) => {
-    res.send(input)
-})
-
-// app.listen(port, () => {
-//     console.log('Server is up on port ' + port)
+// app.get('', (req, res) => {
+//     res.send(input)
 // })
+
+// // app.listen(port, () => {
+// //     console.log('Server is up on port ' + port)
+// // })
